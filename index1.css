@@ -1,0 +1,914 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+header{
+    width: 100vw;
+    height: 16vh;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-around;
+}
+#Mercedes-Logo {
+    position: absolute;
+    top: 3%;
+    left: 50px;
+    width: 70px;
+}
+#Mercedes-Slogan {
+    position: absolute;
+    top: 50px;
+    left: 190px;
+    width: 120px;
+}
+
+
+nav {
+    background-color: black;
+    position: relative;
+}
+
+nav img {
+    width: 15%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    padding: 10px 50px;
+    font-family: corpo-s-text, Arial, Verdana, Helvetica, sans-serif;
+    position: relative;
+}
+
+nav hr {
+    height: 1px;
+    background-color: rgb(250, 250, 250);
+    border: none;
+    position: absolute;
+    width: 100%;
+    top: 5px;
+}
+
+nav ul li {
+    position: relative;
+    padding-bottom: 10px;
+
+}
+
+nav ul li a {
+    color: #767676;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    border-radius: 4px;
+    position: relative;
+
+}
+
+nav ul li a:hover {
+    color: rgb(245, 245, 245);
+}
+
+/* Blue hover line effect above hr */
+nav ul .blue-line ::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    top: -5px;
+    left: 0;
+    transition: background-color 1.3s ease;
+}
+
+nav ul li.blue-line > a:hover::after {
+    background-color: blue;  /* Blue line appears on hover */
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 108%;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    list-style: none;
+    min-width: 270px;
+    padding: 20px;
+    z-index: 20;
+    border-radius: 8px;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li a {
+    position: relative;
+    color: #333;
+    transition: background-color 1.5s ease;
+
+}
+
+nav ul li ul li a:hover {
+    background-color: #c5c5c5;
+    color: #333;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+nav ul li ul li ul.modele {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    list-style: none;
+    min-width: 290px;
+    border-radius: 8px;
+    left: 110%;
+    top: 0;
+    margin-top: 0;
+    transition: visibility 0.3s ease, opacity 0.3s ease;
+    padding: 10px 0;
+}
+
+nav ul li ul li:hover ul.modele {
+    display: block;
+}
+
+#fa-chevron-right {
+    position: absolute;
+    left: 240px;
+    top: 15px;
+}
+
+
+
+
+.hero {
+    background-image: url('images/amg_gt.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    position: relative;
+    color: white;
+}
+
+.hero h1 {
+    position: relative;
+    font-size: 48px;
+    color: white;
+}
+.hero p {
+    position: relative;
+    color: white;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.2), rgb(0, 0, 0));
+}
+
+
+
+.buttons {
+    position: relative;
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    background-color: #0078d6;
+    color: #ffffff;
+    border-radius: 50px;
+    padding: 12px 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #005fa3;
+}
+
+.button.secondary {
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+.button.secondary:hover {
+    background-color: #767676;
+}
+
+
+
+
+/*** Model Collections**/
+.collections{
+    width: 100vw;
+    height: 75vh;
+    position: relative;
+    margin-bottom: 70px;
+}
+
+
+/*** Model Collections**/
+.collections h2{
+    padding-left: 10%;
+    padding-top: 3%;
+    font-style: italic;
+    font-size: 1.8rem;
+}
+
+/***** Modeles Filtres***/
+.modeles-filtre {
+    height: auto;
+}
+.modeles-filtre ul li{
+    float: left;
+    font-size: large;
+    list-style: none;
+    color: #767676;
+    text-align: center;
+    border-right: solid 2px #767676;
+    width: auto;
+    padding-inline: 31px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.modeles-filtre ul{
+    list-style-type: none;
+    overflow: hidden;
+    width: max-content;
+    margin: auto;
+    border: solid 1px #767676;
+    border-radius: 20px;
+    height: 90%;
+}
+.modeles-filtre ul li:last-child {
+    border-right: none;
+}
+.modeles-filtre ul li:first-child {
+    color: white;
+    background-color: #767676;
+}
+
+.modeles-filtre ul li:hover {
+    color: white;
+    background-color: #767676;
+}
+/**** slider***/
+.slider-container {
+    width: 90%;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+}
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.slide {
+    min-width: calc(90% / 3);
+    max-width: calc(90% / 3);
+    box-sizing: border-box;
+}
+.modele{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modele img{
+    width: 100%;
+    overflow: hidden;
+    height: auto;
+}
+.modele h3{
+    font-size: 1.3rem;
+    font-family: Arial,Verdana,Helvetica,sans-serif;
+    font-style: italic;
+}
+.modele p{
+    color: #8e8e8e;
+    margin-top: 5%;
+}
+.modele a{
+    text-decoration: none;
+    color: #0078DE;
+}
+.model-button{
+    display: none;
+}
+.modele:hover img {
+    transform: scale(1.1);
+    transition: 1.2s;
+}
+.modele:hover .model-button {
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 4%;
+    cursor: pointer;
+}
+
+.modele:hover .model-button .btn-telecharger {
+    width: 50%;
+    height: 30px;
+    color: black;
+    text-align: center;
+    font-style: oblique;
+    border: solid 1px #767676;
+    border-radius: 30px;
+    font-size: medium;
+    cursor: pointer;
+}
+
+.modele:hover .model-button .btn-acheter {
+    width: 50%;
+    height: 30px;
+    color: aliceblue;
+    text-align: center;
+    font-style: oblique;
+    border: solid 1px cornflowerblue;
+    border-radius: 30px;
+    background-color: #0078DE;
+    font-size: medium;
+    margin-top: 2%;
+    cursor: pointer;
+}
+#btn-previous{
+    width: 5%;
+    height: 10%;
+    border: 0;
+    border-radius: 50px;
+    position: absolute;
+    top: 50%;
+    right: 93%;
+    font-size: large;
+}
+#btn-after{
+    width: 5%;
+    height: 10%;
+    border: 0;
+    border-radius: 50px;
+    position: absolute;
+    top: 50%;
+    left: 91%;
+    font-size: large;
+}
+
+#coupes{
+    display: none;
+}
+#suv{
+    display: none;
+}
+#cabriolets{
+    display: none;
+}
+#compactes{
+    display: none;
+}
+
+
+/* Vehicules styles */
+.vehicules-section{
+    width: 100vw;
+    height: 100vh;
+    margin-top: 10%;
+}
+.vehicules-description{
+    height: 10%;
+    padding-left: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.vehicules-description h2{
+    font-size: 1.5rem;
+    font-family: Arial,Verdana,Helvetica,sans-serif;
+    font-style: italic;
+}
+.vehicules-description h6{
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #767676;
+}
+.vehicules{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 5%;
+}
+.vehicule{
+    height: 95%;
+    width: 20%;
+    border: solid 1px #767676;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 #767676;
+    transition: 0.3s;
+}
+.vehicule .card-header{
+    width: 100%;
+    height: 60%;
+    cursor: pointer;
+}
+.vehicule .card-header .card-image{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.vehicule .card-header .card-image img{
+    border-radius: 2%;
+    width: 100%;
+    height: auto;
+}
+.vehicule .card-header .card-image .card-badge{
+    position: absolute;
+    background-color: #0078DE;
+    border-radius: 20px;
+    width: 30%;
+    top: 5%;
+    left: 5%;
+}
+.vehicule .card-header .card-image .card-badge p{
+    color: aliceblue;
+    text-align: center;
+    width: 90%;
+    padding: 5%;
+}
+.vehicule .card-content{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.vehicule .card-header h2{
+    font-style: italic;
+    padding-left: 3%;
+}
+.vehicule .card-header:hover h2{
+    color: #0078DE;
+}
+.vehicule .card-header:hover p{
+    color: #0078DE;
+}
+
+.vehicule .card-header p{
+    font-style: italic;
+    padding-left: 3%;
+}
+.vehicule .card-content h3{
+    font-style: italic;
+    color: #0078DE;
+    padding-left: 3%;
+}
+.vehicule .card-content .content-icons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 5%;
+}
+.card-content .content-icons .icon{
+    text-align: center;
+}
+.card-footer{
+    height: 15%;
+    border-top: solid 1px #767676;
+    cursor: pointer;
+}
+.card-footer:hover{
+    height: 15%;
+    border-top: solid 1px white;
+    background-color: #767676;
+}
+.card-footer:hover  p{
+    padding-top: 5%;
+    font-weight: bold;
+    color: white;
+}
+.card-footer p{
+    padding-top: 4%;
+    text-align: center;
+    font-weight: bold;
+    color: #0078DE;
+}
+/* Gellerie section */
+.page-section h2{
+    font-size: 2em;
+    padding: 20px;
+    
+}
+.parent{
+display: grid;
+grid-template-columns: repeat(4,auto);
+grid-template-rows: repeat(3,auto);
+gap: 20px;
+width: 96vw;
+opacity: 0.98;
+height: 100vh;
+position: relative;
+margin: auto;
+
+}
+
+
+
+.parent >div{
+border-radius: 15px;
+}
+
+.parent >div:hover{
+    transition: all 0.7s;
+    background-size: 110%;
+}
+
+.parent .child1{
+grid-column: 1/3;
+grid-row: 1/3;
+position: relative;
+background-image: url("./images/parent1.webp");
+background-size: 100%;
+z-index: -1;
+}
+
+.parent .child2{
+grid-column: 3/4;
+grid-row: 1/3;
+position: relative;
+background-image: url("./images/parent2.webp");
+background-size: 100%;
+}
+.parent .child3{
+grid-column: 4/5;
+grid-row: 1/2;
+position: relative;
+background-image: url("./images/parent3.webp");
+background-size: 100%;
+}
+.parent .child4{
+grid-column: 1/2;
+grid-row: 3/4;
+position: relative;
+background-image: url("./images/parent4.webp");
+background-size: 100%;
+}
+
+
+.parent .child5{
+grid-column: 2/3;
+grid-row: 3/4;
+position: relative;
+background-image: url("./images/parent5.webp");
+background-size: 100%;
+}
+.parent .child6{
+grid-column: 3/4;
+grid-row: 3/4;
+position: relative;
+background-image: url("./images/parent6.webp");
+background-size: 100%;
+}
+.parent .child7{
+grid-column: 4/5;
+grid-row: 2/4;
+position: relative;
+background-image: url("./images/parent7.webp");
+background-size: 100%;
+}
+.parent div span{
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+width: 100%;
+height: fit-content;
+text-align: center;
+position: absolute;
+color: white;
+bottom: 50%;
+left: 50%;
+transform: translateX(-50%) translateY(50%);
+
+
+}
+/* A propos Section */
+.section-Apropos{
+    width: 100vw;
+    height: 20vw;
+    padding: 2%;
+}
+.section-Apropos h1{
+    font-size: 3.5em;
+}
+.section-Apropos p{
+    padding-top: 2%;
+    width: 90%;
+    line-height: 1.4;
+    color: gray;
+    font-size: 1.2rem;
+    text-align: left;
+}
+/* Fixed Icons */
+.fixed-icons .whatsapp-icon img{
+    position: fixed;
+    width: 76px;
+    height: 76px;
+    bottom: 40px;
+    right: 10px;
+    text-align: center;
+    z-index: 100;
+    cursor: pointer;
+}
+.fixed-icons .cockies-icon img{
+    position: fixed;
+    width: 76px;
+    height: 76px;
+    bottom: 40px;
+    left: 10px;
+    text-align: center;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.By-Desire {
+    background-image: url('images/mercedes_benz_cle.webp');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    position: relative;
+    color: white;
+    margin: 70px 0;
+
+}
+
+.By-Desire h1 {
+    position: relative;
+    font-size: 48px;
+    color: white;
+}
+.By-Desire p {
+    position: relative;
+    color: white;
+}
+
+.By-Desire::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.2), rgb(0, 0, 0));
+}
+
+
+
+
+footer {
+    background-color: black;
+    padding: 60px;
+    font-family: Arial, sans-serif;
+}
+
+.enhaut {
+    color: white;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+.enhaut i {
+    font-size: 1em;
+    margin-left: 20px;
+}
+
+footer ul li a {
+    color: #767676;
+    text-decoration: none;
+    margin-right: 20px;
+    display: block;
+    margin-bottom: 15px;
+    margin-top: 20px;
+
+}
+
+footer ul li a:hover {
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+    display: block;
+}
+
+strong {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+footer .links {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 40px;
+}
+
+#entrepriseInfo {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 40px;
+    display: none;
+}
+
+footer .info-entreprise ul li {
+    color: white;
+    display: inline-block;
+    list-style: none;
+    cursor: pointer;
+    margin-top: 15px;   
+    margin-left: 35px; 
+}
+
+
+.media {
+    display: flex;
+    gap: 15px;
+    font-size: 1.3em;
+    color: white;
+    cursor: pointer;
+    margin-left: 89%;
+    margin-top: -40px;
+
+}
+.youtube i:hover {
+    color: rgb(151, 26, 26);
+}
+
+.facebook i:hover {
+    color: #3b5998;
+}
+
+.instagram i:hover {
+    color: #c13584;
+}
+
+.linkedin i:hover {
+    color: #0077b5;
+} 
+
+/* Caroussel */
+
+.caroussel-container{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}  
+.caroussel-container h2{
+      font-size: 2.5em;
+      padding: 10px;
+      margin: 0px 10px;
+} 
+.caroussel-container p{
+      font-size: 1.1em;
+      padding: 10px;
+      margin: 10px;
+      color: grey;
+}
+                
+.caroussel{
+   display: flex;
+    transition: transform 0.5s ease-in-out
+    
+    
+}
+.caroussel-item{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    flex: 0 0 calc(30% - 20px); 
+    height: 75vh;
+    margin: 0 17px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+    
+  
+.content {
+    position: absolute;
+    height: 30%;
+    width: 70%;
+    color: white;
+     text-align: center; 
+    bottom: 10%;
+    left: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.content > span{
+      font-size: 1.2em;
+      font-weight: bold;
+}
+.content  p{
+      font-size: medium;
+      color: white;
+      font-weight: normal;
+      
+}
+  
+.caroussel-item img{
+    overflow: hidden; 
+    border-radius: 10px;
+    width: 100%;
+}
+div.btn-bleu{ 
+    background-color: #007bff;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    width: 22vw;
+    bottom: 18%;
+    left: 10%;
+    margin-top: 20px;
+}
+.caroussel-item:hover .content{
+      transition: all 0.6s;
+      padding-bottom: 80px;
+}
+  
+.caroussel-item img:hover{
+      transition: all 0.6s;
+}
+.boutton{
+    position: relative;
+}
+.boutton a {
+    position: absolute;
+    bottom: 200px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    padding: 13px;
+    cursor: pointer;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;}
+    .next{
+      position: absolute;
+      right: 90px;
+    }
+    
+    .prev{
+      left: 0px;
+    }
+  
+    .boutton a:hover {
+      background-color: rgba(255, 255, 255, 1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+      
+  
+    .dot {
+      cursor: pointer;
+      height: 8px;
+      width: 8px;
+      margin: 0px  8px;
+      background-color: #bbbbbb57;
+      border-radius: 50%;
+      display: inline-flex;
+      margin-top: 15px;
+    }
+    .active, .dot:hover {
+      background-color: #717171;
+    }
+
+
+
+    
