@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        @keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <main>
+        <section>
+            <div class="section-start" id="section-start">
+                <img src="./image/mb-star-svg.svg" alt="Logo">
+                <h2>Demander un RDV <span>SAV</span></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, quibusdam. Excepturi quis voluptatum tempora quas beatae dolorum corrupti vero quisquam, eius id totam veniam dignissimos sit. </p>
+                <button id="btn-start">Start</button>
+            </div>
+            <div class="stepContainer" id="stepOne">
+                <div class="stepMenu">
+                    <div class="step">1</div>
+                    <div class="step">2</div>
+                    <div class="step">3</div>
+                </div>
+                <div class="stepcontent">
+                    <div class="content">
+                        <h2>Demander un <span>RDV SAV</span></h2>
+                        <img src="./image/pc501463.webp" alt="alt">
+                    </div>
+                    <div class="stepOneForm">
+                        <div>
+                            <label for="prenom">Prenom*</label>
+                            <input type="text" name="prenom" id="prenom">
+                        </div>
+                        <div>
+                            <label for="nom">Nom*</label>
+                            <input type="text" name="nom" id="nom">
+                        </div>
+                        <div>
+                            <label for="email">E-mail*</label>
+                        <input type="email" name="email" id="email">
+                        </div>
+                        <div>
+                            <label for="civilite">Civilite*</label>
+                            <input type="text" id="Civilite" name="civilite">
+                        </div>
+                        <div>
+                            <button class="btn-retour" id="toStartBtn">Retour</button>
+                            <button class="btn-suivant" id="toStepTwoBtn">Suivant</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stepContainer" id="stepTwo">
+                <div class="stepMenu">
+                    <div class="step-done">1</div>
+                    <div class="step">2</div>
+                    <div class="step">3</div>
+                </div>
+                <div class="stepcontent">
+                    <div class="content">
+                        <h2>Demander un <span>RDV SAV</span></h2>
+                        <img src="./image/pc501463.webp" alt="alt">
+                    </div>
+                    <div class="stepOneForm">
+                        <div>
+                            <label for="Immatriculation">Immatriculation *</label>
+                            <input type="text" name="Immatriculation " id="Immatriculation ">
+                        </div>
+                        <div>
+                            <label for="Modele">Modèle *</label>
+                            <input type="text" name="Modele" id="Modele">
+                        </div>
+                        <div>
+                            <label for="Kilometrage">Kilométrage*</label>
+                        <input type="email" name="Kilometrage" id="Kilometrage">
+                        </div>
+                        <div>
+                            <label for="point_vente">point de vente*</label>
+                            <input type="text" id="point_vente" name="point_vente">
+                        </div>
+                        <div>
+                            <button class="btn-retour" id="toStepOneBtn">Retour</button>
+                            <button class="btn-suivant" id="toStepFinalBtn">Suivant</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stepContainer" id="stepFinal">
+                <div class="stepMenu">
+                    <div class="step-done">1</div>
+                    <div class="step-done">2</div>
+                    <div class="step-done">3</div>
+                </div>
+                <div class="stepcontent">
+                    <div class="content">
+                        <h2>Demander un <span>RDV SAV</span></h2>
+                        <img src="./image/pc501463.webp" alt="alt">
+                    </div>
+                    <div class="formDone">
+                        <div class="icon">
+                            <i class="fa-solid fa-check fa-2xl"></i>
+                        </div>
+                        <div>
+                            <h2>C'est terminé !</h2>
+                        </div>
+                        <div>
+                            <p>Merci d'avoir complété le formulaire.<br> Nous vous contacterons prochainement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <script>
+        let btnStart= document.getElementById("btn-start");
+        let stepOne = document.getElementById("stepOne");
+        let stepTwo = document.getElementById("stepTwo");
+        let stepFinal=document.getElementById("stepFinal")
+        let sectionStart = document.getElementById("section-start");
+        let toStartBtn= document.getElementById("toStartBtn");
+        let toStepTwoBtn =document.getElementById("toStepTwoBtn");
+        let toStepOneBtn=document.getElementById("toStepOneBtn");
+        let toStepFinalBtn=document.getElementById("toStepFinalBtn");
+
+        function toStepOne(){
+            sectionStart.style.display = 'none';
+            stepTwo.style.display = 'none';
+            stepFinal.style.display = 'none';
+            stepOne.style.display = 'block';
+            stepOne.style.animation = ' slideUp 1s ease-out forwards';
+        }
+        
+        function toStepTwo(){
+            stepFinal.style.display = 'none';
+            sectionStart.style.display = 'none';
+            stepTwo.style.animation = ' slideUp 1s ease-out forwards';
+            stepTwo.style.display = 'block';
+            stepOne.style.display = 'none';
+        }
+        function toStart(){
+            sectionStart.style.display = 'flex';
+            sectionStart.style.animation = ' slideUp 1s ease-out forwards';
+            stepFinal.style.display = 'none';
+            stepTwo.style.display = 'none';
+            stepOne.style.display = 'none';
+        }
+        function toStepFinal(){
+            sectionStart.style.display = 'none';
+            stepFinal.style.display = 'block';
+            stepFinal.style.animation = ' slideUp 1s ease-out forwards';
+            stepTwo.style.display = 'none';
+            stepOne.style.display = 'none';
+        }
+
+        
+        btnStart.addEventListener('click',toStepOne);
+        toStepOneBtn.addEventListener('click',toStepOne)
+        toStartBtn.addEventListener('click',toStart);
+        toStepTwoBtn.addEventListener('click',toStepTwo);
+        toStepFinalBtn.addEventListener('click',toStepFinal);
+
+    </script>
+</body>
+</html>

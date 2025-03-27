@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+section{
+    position: relative;
+}
+section::before{
+    content: ""; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./image/pc501463.webp");
+    background-size: cover;
+    background-position:  center;
+    filter: contrast(8%);
+    overflow: hidden;
+    z-index: -1;
+}
+.section-start{
+    display: flex;
+    z-index: 1;
+    width: 50%;
+    height: 45vh;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10%;
+    justify-content: space-between;
+}
+.section-start img{
+    width: 20%;
+    height: auto;
+}
+.section-start h2{
+    font-weight: normal;
+}
+.section-start h2>span{
+    font-weight: bold;
+    display: block;
+    text-align: center;
+}
+.section-start p{
+    text-align: center;
+}
+.section-start #btn-start{
+    background-color: rgb(0, 102, 255);
+    color: aliceblue;
+    width: 20%;
+    height: auto;
+    padding: 1px;
+    font-size: medium;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.stepContainer{
+    background-color: rgb(255, 255, 255);
+    width: 80vw;
+    height: 89vh;
+    margin-top: 5%;
+    position: absolute;
+    left: 5%;
+}
+#stepOne{
+    display: none;
+}
+.stepMenu{
+    padding-top: 2%;
+    width: 60%;
+    height: 15%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.stepMenu .step{
+    display: inline-block;
+    width: 7%;
+    height: 50%;
+    border-radius: 100%;
+    border: solid black 1px;
+    color: black;
+    font-size: 30px;
+    text-align: center;
+}
+.stepcontent{
+    width: 100%;
+    height: 85%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.content{
+    width: 30%;
+}
+.content h2{
+    font-weight: lighter;
+}
+.content h2 > span{
+    display: block;
+    font-weight: bold;
+}
+.content img{
+    border-radius: 3%;
+}
+.stepOneForm{
+    display: flex;
+    flex-direction: column;
+    height: 55%;
+    width: 50%;
+    justify-content: space-around;
+}
+.stepOneForm >div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+div > input{
+    width: 70%;
+}
+.btn-retour{
+    background-color: rgb(0, 0, 0);
+    color: aliceblue;
+    width: 20%;
+    height: auto;
+    padding: 1px;
+    font-size: medium;
+    border-radius: 20px;
+    cursor: pointer; 
+}
+.btn-suivant{
+    background-color: rgb(0, 102, 255);
+    color: aliceblue;
+    width: 20%;
+    height: auto;
+    padding: 1px;
+    font-size: medium;
+    border-radius: 20px;
+    cursor: pointer; 
+}
+.stepContainer{
+    background-color: rgb(255, 255, 255);
+    width: 80vw;
+    height: 89vh;
+    border-radius: 2%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 5%;
+    position: absolute;
+    left: 5%;
+}
+.stepMenu .step-done{
+    display: inline-block;
+    width: 7%;
+    height: 50%;
+    border-radius: 100%;
+    border: solid black 1px;
+    background-color: black;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    text-align: center;
+}
+#stepTwo{
+    display: none;
+}
+.formDone{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.formDone .icon{
+    width: 50px;
+    height: 50px;
+    border: solid 1px rgb(4, 226, 78);
+    border-radius: 50%;
+    background-color: rgb(4, 226, 78);
+}
+.formDone .icon i{
+    padding-top: 50%;
+    padding-left: 20%;
+}
+
+#stepFinal{
+    display: none;
+}
